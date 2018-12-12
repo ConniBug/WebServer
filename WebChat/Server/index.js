@@ -44,12 +44,13 @@ app.get('/', function(request, response) {
       response.send("");
     }
 
-    if(request.query.connectionStat == "Offline"){
-      fs.unlinkSync('ActiveConnections.txt');
-      var createStream = fs.createWriteStream("ActiveConnections.txt");
-      createStream.end();
-      response.send("");
-    }
+    //Not Efficiant Remove Number: 1
+    //if(request.query.connectionStat == "Offline"){
+    //  fs.unlinkSync('ActiveConnections.txt');
+    //  var createStream = fs.createWriteStream("ActiveConnections.txt");
+    //  createStream.end();
+    //  response.send("");
+    //}
 
     if(request.query.message == 'null'){
       console.log("Get Message Request");
