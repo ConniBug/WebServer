@@ -1,22 +1,17 @@
 import urllib.request
-  
-#def send_message(message):
-#req = urllib.request.Request(url)
-    #return(req)
 
-url = 'https://Chat-Webserver--connorbilham1.repl.co/?versionnumbe
+def get_version():   
+    url = 'https://Chat-Webserver--connorbilham1.repl.co/?versionnumber'
+    try:
+        req = urllib.request.Request(url)
+        return(req)
+    except urllib.error.HTTPError as e:
+        print(e)
 
-try:
-    req = urllib.request.Request(url)
-except all as e:
-    print("Error")
-    print(e)
-    print("Report bug with what you were doing when message was sent and the error")    
+with urllib.request.urlopen(Connect()) as response:
+    the_page = response.read()
+
     
-try:
-    urllib.request.urlopen(req)
-except all as e:
-    print("Error")
-    print(e)
-    print("Report bug with what you were doing when message was sent and the error")    
-
+with urllib.request.urlopen(get_message()) as response:
+    the_page = response.read()
+    print(the_page)
